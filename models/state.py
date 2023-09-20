@@ -2,8 +2,7 @@
 """ State Module for HBNB project """
 
 from models.base_model import BaseModel, Base
-from models.base_model import City
-from models import storage
+from models.city import City
 
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
@@ -26,9 +25,10 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """A function to return cities attr in State class."""
+            from models import storage
             ret_cities = []
             for value in storage.all(City).values():
-                if value.state_id = self.id:
+                if value.state_id == self.id:
                     ret_cities.append(value)
 
             return ret_cities
