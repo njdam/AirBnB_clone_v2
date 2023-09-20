@@ -16,7 +16,7 @@ class City(BaseModel, Base):
             ) if getenv('HBNB_TYPE_STORAGE') == 'db' else ''
 
     state_id = Column(
-            String(60), ForignKey('states.id'), nullable=False
+            String(60), ForeignKey('states.id'), nullable=False
             ) if getenv('HBNB_TYPE_STORAGE') == 'db' else ''
 
     # Making relation of class City with class Place if storage is Database
