@@ -31,4 +31,4 @@ class State(BaseModel, Base):
                 if value.state_id == self.id:
                     ret_cities.append(value)
 
-            return ret_cities
+            return (ret_cities)
