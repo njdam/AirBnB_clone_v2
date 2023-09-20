@@ -186,7 +186,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the create method """
         print("Creates a class of any type")
         print("Usage: create <Class name> <param 1> <param 2> <param 3>...")
-        print("\tWhere Param syntax: <key name>=\"<value>\"")
+        print("\tWhere Param syntax: <key name>\"<value>\"")
 
     def do_show(self, args):
         """ Method to show an individual object """
