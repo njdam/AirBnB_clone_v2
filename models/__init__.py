@@ -8,6 +8,7 @@ from os import getenv
 
 
 storage = DBStorage() if getenv(
-        'HBNB_TYPE_STORAGE') == 'db' else FileStorage()
+        'HBNB_TYPE_STORAGE'
+        ) == 'db' else FileStorage()
 
 storage.reload()

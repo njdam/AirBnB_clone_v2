@@ -25,7 +25,7 @@ place_amenity = Table(
 """This table represents the relationship between Place and Amenity recs."""
 
 
-class Place(BaseModel):
+class Place(BaseModel, Base):
     """ A place to stay """
     __tablename__ = 'places'
 

@@ -8,7 +8,7 @@ from sqlalchemy.orm import relationship
 from os import getenv
 
 
-class Review(BaseModel):
+class Review(BaseModel, Base):
     """ Review class to store review information of models """
     __tablename__ = 'reviews'
 
