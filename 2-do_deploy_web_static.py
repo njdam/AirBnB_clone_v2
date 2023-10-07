@@ -38,6 +38,7 @@ def do_pack():
         output = None
     return output
 
+
 def do_deploy(archive_path):
     """This function distribute an archive to the web servers."""
     # If path is not exists return false
