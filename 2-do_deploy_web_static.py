@@ -42,7 +42,7 @@ def do_pack():
 def do_deploy(archive_path):
     """This function distribute an archive to the web servers."""
     # If path is not exists return false
-    if not path.exists(archive_path):
+    if (path.isfile(archive_path) is False):
         return (False)
     # Declaring filename, foldername, and folder path in servers
     filename = path.basename(archive_path)
