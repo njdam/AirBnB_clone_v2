@@ -8,7 +8,7 @@ exec { 'apt-get-update':
 }
 
 # Deleting command
-exec { 'delete-current':
+exec { 'remove-current':
   command 	=> 'rm -rf /data/web_static/current',
   path 		=> '/usr/bin:/usr/sbin/:bin',
 }
@@ -40,7 +40,7 @@ file { '/var/www/error/404.html':
 }
 
 # Making the web static folders
-exec { 'make-static-folder':
+exec { 'make-static-files-folder':
   command => 'mkdir -p /data/web_static/releases/test /data/web_static/shared',
   path    => '/usr/bin:/usr/sbin:/bin',
   require => Package['nginx'],
@@ -60,7 +60,7 @@ file { '/data/web_static/releases/test/index.html':
 </html>
 ",
   replace => true,
-  require => Exec['make-static-folder'],
+  require => Exec['make-static-files-folder'],
 }
 
 # Linking the recent release of static files to current
@@ -68,7 +68,7 @@ exec { 'link-static-files':
   command => 'ln -sf /data/web_static/releases/test/ /data/web_static/current',
   path    => '/usr/bin:/usr/sbin:/bin',
   require => [
-    Exec['delete-current'],
+    Exec['remove-current'],
     File['/data/web_static/releases/test/index.html'],
   ],
 }
