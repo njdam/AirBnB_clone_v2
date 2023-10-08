@@ -1,4 +1,3 @@
-#!/usr/bin/puppet apply
 # AirBnB clone deployment to web servers setup and configuration by puppet
 
 # Updating command
