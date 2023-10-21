@@ -3,28 +3,29 @@
 
 from flask import Flask
 
-# Flask web application
+
 app = Flask(__name__)
+"""The Flask application option"""
 app.url_map.strict_slashes = False
 
 
 @app.route('/')
 def hello_hbnb():
-    """A flask app to return Hello HBNB!"""
-    return ("Hello HBNB!")
+    """The home page"""
+    return ('Hello HBNB!')
 
 
 @app.route('/hbnb')
 def hbnb():
-    """a flsk app to return HBNB"""
-    return ("HBNB")
+    """The hbnb page"""
+    return ('HBNB')
 
 
 @app.route('/c/<text>')
 def c_page(text):
-    """A flask app to return c is fun and replacing _ with space."""
-    return ("c {}".format(text.replace('_', ' ')))
+    """The c page"""
+    return ('C {}'.format(text.replace('_', ' ')))
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port='5000')
