@@ -51,7 +51,7 @@ def number_template(n):
 def number_odd_or_even(n):
     """Is even or odd number page"""
     if n % 2 == 0:
-        pdict = {'n': n,'t': "even"}
+        pdict = {'n': n, 't': "even"}
     else:
         pdict = {'n': n, 't': "odd"}
     return (render_template('6-number_odd_or_even.html', **pdict))
