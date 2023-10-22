@@ -16,10 +16,8 @@ def states_list():
     """Displaying List of States page."""
     all_states = list(storage.all(State).values())
     all_states.sort(key=lambda state: state.name)
-    for state in all_states:
-        state.cities.sort(key=lambda state: state.name)
-        pdict = {'states': all_states}
-        return (render_template('8-cities_by_states.html', **pdict))
+    pdict = {'states': all_states}
+    return (render_template('8-cities_by_states.html', **pdict))
 
 
 @app.teardown_appcontext
