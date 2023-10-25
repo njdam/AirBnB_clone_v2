@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<HEAD>
+    <META charset="UTF-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <META http-equiv="X-UA-Compatible" content="IE=edge">
+    <TITLE>AirBnB Clone - States & Cities</TITLE>
+</HEAD>
+<BODY>
+    {% if case == 1 %}
+    <H1>States</H1>
+    {% for state in states %}
+    <UL>
+        <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
+    </UL>
+    {% endfor %}
+    {% elif case == 2 %}
+    <H1>State: {{ state.name }}</H1>
+    <H3>Cities:</H3>
+    {% for city in state.cities %}
+    <UL>
+        <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
+    </UL>
+    {% endfor %}
+    {% else %}
+    <H1>Not found!</H1>
+    {% endif %}
+</BODY>
+</HTML>
